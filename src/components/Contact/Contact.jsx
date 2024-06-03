@@ -1,17 +1,19 @@
 import { FaUserLarge } from "react-icons/fa6";
 import { FaPhone } from "react-icons/fa6";
 
+import css from './Contact.module.css'
 
 
-const Contact = ({ name, number }) => {
+
+const Contact = ({ name, phone }) => {
   return (
-<div>
+<div className={css.contactWrapper} >
     <div>
-          <p><FaUserLarge /> {name}</p>  
-          <p><FaPhone /> {number}</p>
+          <p className={css.contactTextWrapper}><FaUserLarge /> {name}</p>  
+          <p className={css.contactTextWrapper}><FaPhone /> {phone}</p>
     </div>
           
-     <button type="button">Delete</button>     
+     <button type="button" className={css.listBtn}>Delete</button>     
 </div>  
   )
 

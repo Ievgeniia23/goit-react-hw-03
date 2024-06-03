@@ -1,0 +1,22 @@
+.contactWrapper {
+
+    border: 2px solid black;
+    border-radius: 4px;
+    display: flex;
+    padding: 6px;
+    justify-content: space-between;
+}
+
+
+.contactTextWrapper {
+justify-content: left;
+
+}
+
+.listBtn {
+border: 2px solid gray;
+background-color: antiquewhite;
+padding: 4px;
+font-size: 24px;
+
+}
