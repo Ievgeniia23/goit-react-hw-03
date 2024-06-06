@@ -4,8 +4,8 @@ import SearchBox from './components/SearchBox/SearchBox';
 import ContactForm from './components/ContactForm/ContactForm';
 
 import initialContacts from './contacts.json'
+import css from './App.module.css'
 
-import './App.css'
 
 const App = () => {
   const [contacts, setContacts] = useState(() => {
@@ -40,7 +40,7 @@ const App = () => {
     contact.name.toLocaleLowerCase().includes(filter.toLocaleLowerCase())
    )
     return (
-  <div>
+  <div className={css.totalWrapper}>
   <h1>Phonebook</h1>
   <ContactForm onAdd={addContact} />
       <SearchBox

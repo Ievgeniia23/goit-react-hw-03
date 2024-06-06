@@ -9,7 +9,7 @@ const validationSchema = Yup.object().shape({
   name: Yup.string()
     .trim()
     .min(3, "Too Short!")
-    .max(50, "Too Long!")
+    .max(30, "Too Long!")
     .required("Required!"),
   number: Yup.string()
     .trim()
@@ -43,17 +43,19 @@ const ContactForm = ({ onAdd }) => {
       validationSchema={validationSchema}
     >
       <Form className={css.formWrapper}>
-        <label htmlFor={nameFieldId}>Name</label>
+        <label className={css.formLabel} htmlFor={nameFieldId}>Name</label>
         <Field type='text' name='name'
-          id={nameFieldId} placeholder="Maria Pasinetti" />
+          id={nameFieldId} placeholder="Maria Pasinetti"
+        className={css.formField} />
         <ErrorMessage 
-          name="name" component="span" />
+          name="name" component="span" className={css.error}  />
               
-        <label htmlFor={numberFieldId}>Number</label>
+        <label htmlFor={numberFieldId} className={css.formLabel}>Number</label>
         <Field type='text' name='number'
-          id={numberFieldId} placeholder="111-11-11" />
+          id={numberFieldId} placeholder="111-11-11"
+        className={css.formField} />
         <ErrorMessage
-          name="number" component="span" />
+          name="number" component="span" className={css.error} />
               
 			<button type='submit'>Add contact</button>
 		</Form>

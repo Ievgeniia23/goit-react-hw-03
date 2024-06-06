@@ -1,5 +1,8 @@
 .searchBoxWrapper {
-  padding-left: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+ 
 }
 
 .SearchBoxText {
@@ -13,4 +16,6 @@
   font-size: 20px;
   padding: 8px;
   margin-bottom: 20px;
+  width: 300px;
 }
+
