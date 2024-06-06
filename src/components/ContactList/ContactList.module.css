@@ -1,4 +1,9 @@
 .contactListWrapper {
+   
     list-style: none;
-    gap: 10px;
+    
+}
+
+.listItem {
+    margin-bottom: 16px;
 }

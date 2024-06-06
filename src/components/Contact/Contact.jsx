@@ -5,15 +5,15 @@ import css from './Contact.module.css'
 
 
 
-const Contact = ({ name, phone }) => {
+const Contact = ({ id, name, number, onDelete }) => {
   return (
 <div className={css.contactWrapper} >
     <div>
-          <p className={css.contactTextWrapper}><FaUserLarge /> {name}</p>  
-          <p className={css.contactTextWrapper}><FaPhone /> {phone}</p>
+          <p className={css.contactTextWrapper}><FaUserLarge className={css.icon}/> {name}</p>  
+          <p className={css.contactTextWrapper}><FaPhone className={css.icon}/> {number}</p>
     </div>
           
-     <button type="button" className={css.listBtn}>Delete</button>     
+     <button type="button" className={css.listBtn} onClick={() => onDelete(id)}>Delete</button>     
 </div>  
   )
 
