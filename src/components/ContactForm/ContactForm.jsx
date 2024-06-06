@@ -1,6 +1,22 @@
 import { useId } from "react";
-import { Formik, Form, Field } from 'formik';
+import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { nanoid } from "nanoid";
+import * as Yup from 'yup'
+
+import css from './ContactForm.module.css'
+
+const validationSchema = Yup.object().shape({
+  name: Yup.string()
+    .trim()
+    .min(3, "Too Short!")
+    .max(50, "Too Long!")
+    .required("Required!"),
+  number: Yup.string()
+    .trim()
+    .min(3, "Too Short!")
+    .max(15, "Too Long!")
+    .required("Required!"),
+})
 
 const initialValues = {
   name: '',
@@ -24,13 +40,20 @@ const ContactForm = ({ onAdd }) => {
     <Formik
       initialValues={initialValues}
       onSubmit={handleSubmit}
+      validationSchema={validationSchema}
     >
-      <Form>
+      <Form className={css.formWrapper}>
         <label htmlFor={nameFieldId}>Name</label>
-        <Field type='text' name='name' id={nameFieldId} />
+        <Field type='text' name='name'
+          id={nameFieldId} placeholder="Maria Pasinetti" />
+        <ErrorMessage 
+          name="name" component="span" />
               
         <label htmlFor={numberFieldId}>Number</label>
-        <Field type='text' name='number' id={numberFieldId} />
+        <Field type='text' name='number'
+          id={numberFieldId} placeholder="111-11-11" />
+        <ErrorMessage
+          name="number" component="span" />
               
 			<button type='submit'>Add contact</button>
 		</Form>

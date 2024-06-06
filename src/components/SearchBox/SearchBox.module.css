@@ -1,0 +1,16 @@
+.searchBoxWrapper {
+  padding-left: 40px;
+}
+
+.SearchBoxText {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  margin-bottom: 0;
+}
+
+.SearchBoxInput {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  padding: 8px;
+  margin-bottom: 20px;
+}
